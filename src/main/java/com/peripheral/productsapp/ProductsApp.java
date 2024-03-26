@@ -17,13 +17,29 @@ public class ProductsApp implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		productRepository.save(new Product("Laptop", 5000, 4));
-		productRepository.save(new Product("Camera", 300, 3));
-		productRepository.save(new Product("Smartphone", 5000, 10));
+		//productRepository.save(new Product("Laptop", 5000, 4));
+		//productRepository.save(new Product("Camera", 300, 3));
+		//productRepository.save(new Product("Smartphone", 2300, 10));
 
+		// Afficher tous les produits
 		productRepository.findAll().forEach(System.out::println);
+
+		// Afficher un produit
 		Product product = productRepository.findById(1L).get();
 		System.out.println("===============");
-		System.out.println(product);
+		System.out.println("ID : " + product.getId());
+		System.out.println("Name : " + product.getName());
+		System.out.println("Price : " + product.getPrice());
+		System.out.println("Quantity : " + product.getQuantity());
+
+		// Rechercher un produit
+		System.out.println("===============");
+		productRepository.findByNameContains("L").forEach(System.out::println);
+		System.out.println("===============");
+		productRepository.findByPriceGreaterThan(1000);
+
+		// Mettre a jour un produit
+		System.out.println("===============");
+
 	}
 }
