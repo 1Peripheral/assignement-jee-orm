@@ -1,9 +1,10 @@
-# TP 2 ORM
-Ce dépôt contient une application de gestion de produits développée avec Spring Boot, Spring Data JPA et MySQL. L'application permet de gérer des produits avec des opérations CRUD de base.
+# Gestion de Produits avec Spring ORM
+
+Ce dépôt contient le code source d'un projet réalisé dans le cadre d'un TP sur l'utilisation de Spring ORM pour la gestion de produits. L'objectif principal de ce TP est de se familiariser avec les concepts de base de Spring ORM, en utilisant Spring Data JPA pour la couche d'accès aux données.
 
 ## Entité JPA Product
 
-L'entité JPA `Product` est utilisée pour représenter les produits avec les attributs suivants :
+L'entité JPA `Product` représente un produit avec les attributs suivants :
 - `id` de type `Long`
 - `name` de type `String`
 - `price` de type `double`
@@ -11,23 +12,23 @@ L'entité JPA `Product` est utilisée pour représenter les produits avec les at
 
 ## Configuration de l'unité de persistance
 
-L'unité de persistance est configurée dans le fichier `application.properties` pour permettre la connexion à la base de données MySQL.
+L'unité de persistance est configurée dans le fichier `application.properties` pour spécifier les paramètres de connexion à la base de données.
 
 ## Interface JPA Repository
 
-Une interface JPA Repository basée sur Spring Data est utilisée pour effectuer des opérations de base sur l'entité `Product`.
+Une interface JPA Repository basée sur Spring Data est créée pour effectuer des opérations CRUD de base sur l'entité `Product`.
 
 ## Opérations de gestion des produits
 
-L'application permet de réaliser les opérations suivantes sur les produits :
-- Ajouter des produits
-- Consulter tous les produits
-- Consulter un produit spécifique
-- Chercher des produits par nom
-- Mettre à jour un produit
-- Supprimer un produit
+L'application implémente les opérations de gestion suivantes sur les produits :
+- Ajout de nouveaux produits
+- Consultation de tous les produits
+- Consultation d'un produit spécifique par son ID
+- Recherche de produits par nom
+- Mise à jour des informations d'un produit
+- Suppression d'un produit
 
 ## Migration de H2 Database vers MySQL
 
-La configuration est faite pour migrer de la base de données H2 vers MySQL.
+Dans le cadre de l'apprentissage, une migration de la base de données H2 vers PosgreSQL est réalisée pour comprendre le processus de changement de base de données.
 
